@@ -1,0 +1,1 @@
+export * from './Loopback4OpenApiFix.component';

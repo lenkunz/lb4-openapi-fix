@@ -1,0 +1,14 @@
+import { bind, ContextTags, inject, CoreBindings } from '@loopback/core';
+import { Loopback4OpenApiFixBindings } from './keys';
+import { RestApplication } from '@loopback/rest';
+import { Lb4OpenApiSpec } from './lib/Lb4OpenApiSpec';
+
+@bind({tags: {[ContextTags.KEY]: Loopback4OpenApiFixBindings.COMPONENT}})
+export class Loopback4OpenApiFixComponent {
+    constructor(
+        @inject(CoreBindings.APPLICATION_INSTANCE)
+        private application: RestApplication,        
+    ) {
+        Lb4OpenApiSpec.modifyRestServer(application.restServer);
+    }
+}
