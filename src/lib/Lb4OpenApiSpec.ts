@@ -41,6 +41,17 @@ export namespace Lb4OpenApiSpec {
         let operationId = operation.operationId as string;
         if (operationId && typeof operationId === 'string') {
             const operationIdParts = operationId.split('.');
+            let controllerName = operationIdParts[0];
+
+            if (controllerName.trim().toLowerCase().endsWith('controller')) {
+                controllerName = controllerName.substring(
+                    0,
+                    controllerName.length - 'controller'.length
+                );
+            }
+
+            operationIdParts[0] = controllerName;
+
             operation.operationId = operationIdParts.join('_');
         }
     }
