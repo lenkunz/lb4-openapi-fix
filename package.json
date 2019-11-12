@@ -1,0 +1,19 @@
+{
+  "name": "@souta/lb4-openapi-fix",
+  "version": "1.22.0",
+  "description": "Loopback component as a temporary fix of OpenAPI format to use with openapi-generator project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenkunz/lb4-openapi-fix.git"
+  },
+  "author": "Rapeapach Suwasri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lenkunz/lb4-openapi-fix/issues"
+  },
+  "homepage": "https://github.com/lenkunz/lb4-openapi-fix#readme"
+}
