@@ -1,9 +1,10 @@
 {
   "name": "@souta/lb4-openapi-fix",
-  "version": "1.22.8",
+  "version": "1.22.9",
   "description": "Loopback component as a temporary fix of OpenAPI format to use with openapi-generator project.",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "lb-tsc",
     "clean": "lb-clean lb4-openapi-fix*.tgz dist tsconfig.tsbuildinfo package",
     "verify": "npm pack && tar xf lb4-openapi-fix*.tgz && tree package && npm run clean"

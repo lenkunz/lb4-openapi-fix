@@ -37,6 +37,8 @@ export namespace Lb4OpenApiSpec {
             }
         }
 
+        operation.tags = [controllerName];
+
         // Fix operationId prefix separator.
         // Change from dot to underscore.
         let operationId = operation.operationId as string;
