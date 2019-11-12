@@ -26,13 +26,14 @@ export namespace Lb4OpenApiSpec {
             controllerName = controllerName.trim();
 
             if (
-                controllerName.length !== 0 &&
                 controllerName.toLowerCase().endsWith('controller')
             ) {
-                operation['x-controller-name'] = controllerName.substring(
+                controllerName = controllerName.substring(
                     0, 
                     controllerName.length - 'controller'.length
                 );
+
+                operation['x-controller-name'] = controllerName;
             }
         }
 
@@ -41,14 +42,6 @@ export namespace Lb4OpenApiSpec {
         let operationId = operation.operationId as string;
         if (operationId && typeof operationId === 'string') {
             const operationIdParts = operationId.split('.');
-            let controllerName = operationIdParts[0];
-
-            if (controllerName.trim().toLowerCase().endsWith('controller')) {
-                controllerName = controllerName.substring(
-                    0,
-                    controllerName.length - 'controller'.length
-                );
-            }
 
             operationIdParts[0] = controllerName;
 
