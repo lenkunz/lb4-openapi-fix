@@ -3,6 +3,6 @@ import { BindingKey } from "@loopback/core";
 
 export namespace Loopback4OpenApiFixBindings {
     export const COMPONENT = BindingKey.create<Loopback4OpenApiFixComponent>(
-        'components.AuthenticationComponent',
+        'components.Loopback4OpenApiFixComponent',
     );    
 }
